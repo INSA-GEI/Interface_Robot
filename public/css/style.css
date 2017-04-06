@@ -1,0 +1,104 @@
+.led-lg-red
+{
+  background:red;
+  border-radius:50%;
+  width:120px;
+  height:120px;
+
+}
+#pannel
+{
+    background-color: cornflowerblue;
+}
+
+#battery
+{
+    width: 120px;
+    height:120px;
+}
+
+.led-lg-green
+{
+  background:green;
+  border-radius:50%;
+  width:120px;
+  height:120px;
+}
+
+.led
+{
+    margin : 5px;
+    display: inline-block;
+    text-align: center;
+    vertical-align:middle;
+    position: relative;
+}
+h3
+{
+    font-weight: bold;
+}
+
+#test
+{
+    margin-top : 10px;
+    margin-bottom : 10px;
+}
+
+
+.key
+{
+    max-width: 120px;
+    max-height: 120px;
+    margin : 5px;
+}
+
+#keyUp
+{
+    margin-left:140px;
+}
+
+.container
+{
+   margin-top : 10px;
+}
+
+#video
+{
+     border: 1px solid;
+    margin : 5px;
+}
+
+.console
+{
+    height: 300px;
+    width: 100%;
+    color: white;
+    padding-left: 10px;    
+    background-color: black;
+    overflow-y: scroll;
+}
+
+#position
+{
+  display: inline-block;
+  margin-top:5px;
+}
+
+img
+{
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#video:hover
+{
+    cursor:crosshair;
+}
+
+.clikable:hover
+{
+ cursor:pointer;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pilot your Dumby !</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-10"> <!--Parti user-->
+                    <div class="row">
+                        <div class="col-lg-6">  <!-- Partie Gauche -->                   
+                            <div class="row">
+                                <div class="col-lg-12" id="video-side"> 
+                                    <div class="row">
+					<p id="fps"> FPS SHOW</p>
+                                        <div class="col-lg-12"><img src="img/nosignal2.png" alt="flux-dumber" id="video" height="360" width="480"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4"><button type="button" class="btn btn-info clickable" id="detectArena">Detect Arena</button></div>
+                                        <div class="col-lg-4"><p id="position">Position : y,x</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- Fin Partie Gauche -->
+                                                
+
+                        <div class="col-lg-6"> <!--Partie Droite -->
+                            <div class="row" style="margin-left:10px;">
+                                <div class="col-lg-12" id="voyant">
+                                    <img src="img/chargefull.png"id="battery">
+                                    <img src="img/connection.png" class="led-lg-red clikable" id="target">
+                                    <img src="img/power.png" class="led-lg-red clikable" id="dumber">
+                                </div>
+
+                                <div class="col-lg-12" id="fleches">
+                                    <img class="key" id="keyUp" src="img/keyup.png"> <br>
+                                    <img class="key" id="keyLeft" src="img/keyleft.png">
+                                    <img class="key" id="keyDown" src="img/keydown.png">
+                                    <img class="key" id="keyRight" src="img/keyright.png">   
+                                </div>
+
+                            </div>
+
+                        </div> <!-- FIN Partie Droite -->
+
+                    </div>
+                    <div class="row" id="console-side">
+                        <div class="col-lg-12"> <!-- Console--> 
+                            <div class="console"></div>
+                        </div>   
+                    </div> 
+                </div><!-- FIN Parti user-->
+            </div>  
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/socket.io.min.js"></script>
+        <script src="js/miseenpage.js"></script>
+        <script src="js/front.js"></script>
+        
+
+         
+    </body>
+</html>
