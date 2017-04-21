@@ -47,6 +47,10 @@ $(document).ready(function() {
     });
 
     socket.on('MSG',function(data){           // messageConsole : Entrée
+	if(data=='DISC')
+		alert("Robot Disconnect");
+	else
+	    
         $("div.console").prepend("</br>" +data);
     });
 
