@@ -31,7 +31,7 @@ app.get('/', function(req, res) {
 
 
 
-http.listen(3000);
+http.listen(3000); // Lancement du serveur web
 console.log("server is now running on port 3000");
 
 let connections = [];
@@ -43,6 +43,11 @@ socket.on('end', function(){
     io.emit("tcpDisconected");
 });
 
+
+/*
+ * bind des evenenements aux fonctions de callback
+ * Gestion des clients connecté dans la list client[]
+ */
 
 function handleConnection(client) {
     connections.push(client);
@@ -67,9 +72,12 @@ function handleConnection(client) {
     });
 }
 
+/*
+ * Descriptions des fonctions de call back
+ */
+
 connectTcp = function(msg)
 {
-    //192.168.43.54
      socket.connect(8080, "localhost", function(err) {
 	 dateOrigin = new Date();
          console.log('Connected to raspberry');
@@ -152,7 +160,9 @@ arenaInfirm=function(){
   lastRequest="arenaInfirm";
   }
 
-// traitement des données reçu de la cible
+/*
+ * Traite une trame de donnée reçu.
+ */
 function traitmentMessage(val){
     payload = val.substring(6);
     header = hex2a(val.substring(0,6));
@@ -220,9 +230,6 @@ function addTime(msg)
 	return message;
 }
 
-/*
- * 
- */
 function sendConsole(msg)
 {
 	io.emit('MSG',addTime(msg));
