@@ -1,3 +1,4 @@
+#!/usr/local/bin/node
 let express = require('express');
 let app = express();
 let http = require('http').Server(app);
@@ -192,9 +193,11 @@ function traitmentMessage(val){
 }
 
 
-// Reception des données de la cible
+/*
+ * Evenement sur une donnée tcp reçu 
+ */
 socket.on('data',function(data){
-   let trame = data.split('5452414d45'); // Trame sera le parser final
+   let trame = data.split('5452414d45'); // Trame sera le parser final ici écrit en hexa
    dataInReception+=trame[0];
    if(trame.length>1)
    {
@@ -205,6 +208,10 @@ socket.on('data',function(data){
    }
 });
 
+
+/*
+ * Fonction qui retourne le temps à un message passé en paramétre
+ */
 function addTime(msg)
 {
 	let a = Math.abs(new Date()-dateOrigin);
@@ -213,11 +220,18 @@ function addTime(msg)
 	return message;
 }
 
+/*
+ * 
+ */
 function sendConsole(msg)
 {
 	io.emit('MSG',addTime(msg));
 }
 
+/*
+ * Conversion chaine de caractére avec des informations hexa en chaine de caractére
+ * avec les informations ascii.
+ */
 function hex2a(hexx) {
     var hex = hexx.toString();//force conversion
     var str = '';
