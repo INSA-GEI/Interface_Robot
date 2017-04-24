@@ -90,7 +90,7 @@ connectTcp = function(msg)
 
 disconnectTcp = function(msg)
 {
-    socket.write("MES:C ")
+    socket.write("MSG:C ")
     lastRequest="Disconnection";
 	sendConsole("Déconnecté de la cible");
 }
@@ -145,18 +145,18 @@ sendPos = function(msg){
 }
 
 eventArena = function(){
-  socket.write("MES:"+"bArena"+" ");
+  socket.write("MSG:"+"bArena"+" ");
   lastRequest="eventArena";
 }
 
 arenaConfirm=function(){
-  socket.write("MES:"+"okArena"+" ");
+  socket.write("MSG:"+"okArena"+" ");
   lastRequest="arenaConfirm";
 }
 
 
 arenaInfirm=function(){
-  socket.write("MES:"+"noArena"+" ");
+  socket.write("MSG:"+"noArena"+" ");
   lastRequest="arenaInfirm";
   }
 
