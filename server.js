@@ -98,19 +98,16 @@ function stopMove() {
 function startWithWDDumby() {
   socket.write('DMB:W ');
   lastRequest = 'StartDumbyWithWD';
-  sendConsole('Start dumby');
 }
 
 function startWithoutWDDumby() {
   socket.write('DMB:u ');
   lastRequest = 'StartDumbyWithoutWD';
-  sendConsole('Start dumby');
 }
 
 function restartState() {
   socket.write('DMB:r ');
   lastRequest = 'idleDumby';
-  sendConsole('Idle dumby');
 }
 
 function sendPos(position) {
@@ -175,9 +172,11 @@ function traitmentMessage(val) {
       sendNotification('info', 'Camera désactivé');
     }
     if (lastRequest === 'startDumbyWithWD' || lastRequest === 'StartDumbyWithoutWD') {
+      sendConsole('Dumby is now started');
       io.emit('dumbyStart', true);
     }
     if (lastRequest === 'idleDumby') {
+      sendConsole('Dumby is now stoped');
       io.emit('dumbyStart', false);
     }
   } else if (header === 'NAK') {
