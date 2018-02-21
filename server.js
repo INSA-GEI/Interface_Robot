@@ -268,7 +268,7 @@ function handleConnection(client) {
 /** FIN DECLARATION FONCTION */
 socket.on('error', (err) => {
   console.log(`${err}`);
-  sendNotification('error', 'Erreur impossible de se connecté');
+  sendNotification('error', 'Erreur impossible de se connecter');
   io.emit('superViseurConnection', false);
   lastRequest = '';
 });
