@@ -146,6 +146,7 @@ function traitmentMessage(val) {
   const header = hex2a(val.substring(0, 6));
   if (header !== 'IMG') {
     payload = hex2a(payload);
+    sendConsole(`Reçu : ${header}:${payload}`);
   }
   if (header === 'LCD') {
     io.emit('lostSerial', false);
@@ -185,7 +186,11 @@ function traitmentMessage(val) {
       io.emit('detectionError');
     }
   } else {
-    io.emit(header, payload);
+    if(header === 'BAT'){
+      io.emit(header, payload.toString());
+    }else{
+      io.emit(header, payload);
+    }
   } 
 }
 
