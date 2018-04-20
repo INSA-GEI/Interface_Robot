@@ -94,11 +94,20 @@ export default {
         //frame = document.getElementById("video");
         //frame.src = this.source;
         this.fps++;
-
       }
 
     },
     POS: function(data){
+      let a = data.substr(11);
+      a = a.split(';');
+      let x = Number(a[0]);
+      let y = a[1].split('|');
+      y = Number(y[0]);
+      let robot2 = {
+        x,
+        y
+      }
+      this.robot = robot2;     
     },
     cameraState: function(data){
       this.cameraActive = data;

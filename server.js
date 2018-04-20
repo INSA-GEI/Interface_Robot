@@ -172,7 +172,7 @@ function traitmentMessage(val) {
       io.emit('cameraState', false);
       sendNotification('info', 'Camera désactivé');
     }
-    if (lastRequest === 'startDumbyWithWD' || lastRequest === 'StartDumbyWithoutWD') {
+    if (lastRequest === 'StartDumbyWithWD' || lastRequest === 'StartDumbyWithoutWD') {
       sendConsole('Dumby is now started');
       io.emit('dumbyStart', true);
     }

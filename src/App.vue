@@ -9,13 +9,13 @@
             <Video :tcpState="tcpConnected"/>
           </v-flex>
           <v-flex d-flex xs12 sm6 md6>
-            <v-layout row wrap>
-              <v-flex d-flex xs12>
+            <v-layout row wrap xs12>
+              <v-flex d-flex>
                     <Dashboard :tcpState="tcpConnected" :serialState="serialOpened"/>
               </v-flex>
             </v-layout>
           </v-flex>
-          <v-flex d-flex xs12 sm6 md12 class="hidden-sm-and-down">
+          <v-flex d-flex xs12 sm12 md12 class="hidden-sm-and-down">
               <Console :tcpState="tcpConnected" :serialState="serialOpened"/> 
           </v-flex>
         </v-layout>
@@ -79,10 +79,9 @@ export default {
       if(typeof(state) === 'boolean')
         this.serialOpened = state;
     }
-  }
+  },
 } 
 </script>
-  
 <style>
   .notif{
     margin-left: 50%;

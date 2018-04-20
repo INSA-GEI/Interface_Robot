@@ -1,6 +1,6 @@
 <template>
     <v-card color="grey lighten-4" flat>
-        <v-card-title primary class="title hidden-sm-and-down">
+        <v-card-title primary class="title hidden-xs">
         <div class="center">
             <h3 class="display-1 mb-0">Robot Dashboard</h3>
             <div class="title">
@@ -79,7 +79,7 @@ export default {
        serialState: function(){
            if(this.serialState===false){
                this.dumbyStarted =false;
-               manageSerial(false);
+               this.manageSerial(false);
            }
        },
     }
